@@ -1,11 +1,8 @@
 # Computer Graphics 203.3710, Winter 2018/2019
 ## Students Team data
 
-Name: 'Your real name'  
-Student Number: 'Your student number'
-
-Name: 'Your real name'  
-Student Number: 'Your student number'
+Name: Azmi Haider  
+Student Number: 308139385
 
 ### Lecturer
 *Roi Poranne*
