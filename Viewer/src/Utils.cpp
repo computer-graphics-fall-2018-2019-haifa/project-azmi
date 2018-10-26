@@ -40,11 +40,11 @@ MeshModel Utils::LoadMeshModel(const std::string& filePath)
 		issLine >> std::ws >> lineType;
 
 		// based on the type parse data
-		if (lineType == "v")
+		if (lineType == "v") // vertex
 		{
 			vertices.push_back(Utils::Vec3fFromStream(issLine));
 		}
-		else if (lineType == "vn")
+		else if (lineType == "vn") // normal
 		{
 			// Add the required code here...
 		}
@@ -52,7 +52,7 @@ MeshModel Utils::LoadMeshModel(const std::string& filePath)
 		{
 			// Texture coordinates
 		}
-		else if (lineType == "f")
+		else if (lineType == "f") // face 
 		{
 			faces.push_back(Face(issLine));
 		}

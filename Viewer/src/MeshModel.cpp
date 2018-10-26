@@ -8,9 +8,11 @@
 
 MeshModel::MeshModel(const std::vector<Face>& faces, const std::vector<glm::vec3>& vertices, const std::vector<glm::vec3>& normals, const std::string& modelName) :
 	modelName(modelName),
+	faces(faces),
+	vertices(vertices),
+	normals(normals),
 	worldTransform(glm::mat4x4(1))
 {
-
 }
 
 MeshModel::~MeshModel()
@@ -42,3 +44,14 @@ const std::string& MeshModel::GetModelName()
 {
 	return modelName;
 }
+
+std::vector<Face> MeshModel::getFaces()
+{
+	return faces;
+}
+
+std::vector<glm::vec3> MeshModel::getVertices()
+{
+	return vertices;
+}
+

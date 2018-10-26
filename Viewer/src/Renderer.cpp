@@ -72,33 +72,163 @@ void Renderer::SetViewport(int viewportWidth, int viewportHeight, int viewportX,
 	createOpenGLBuffer();
 }
 
-void Renderer::Render(const Scene& scene)
+
+void Renderer::Render(Scene& scene)
 {
-	//#############################################
-	//## You should override this implementation ##
-	//## Here you should render the scene.       ##
-	//#############################################
 
-	// Draw a chess board in the middle of the screen
-	for (int i = 100; i < viewportWidth - 100; i++)
-	{
-		for (int j = 100; j < viewportHeight - 100; j++)
-		{
-			int mod_i = i / 50;
-			int mod_j = j / 50;
+	// draw the active model
+	if (scene.GetModelCount() > 0) {
+		std::shared_ptr<MeshModel> ActiveModel = scene.getActiveModel();
+		plotActiveModel(ActiveModel);
+	}
+	
+	
+}
 
-			int odd = (mod_i + mod_j) % 2;
-			if (odd)
-			{
-				putPixel(i, j, glm::vec3(0, 1, 0));
-			}
-			else
-			{
-				putPixel(i, j, glm::vec3(1, 0, 0));
-			}
+
+void Renderer::plotActiveModel(std::shared_ptr<MeshModel> ActiveModel) {
+	int shithappens = 0;
+	MeshModel model = *(ActiveModel.get());
+	plotFaces(model.getFaces(), normalizeVertices(model.getVertices()));
+}
+
+
+
+void Renderer::plotFaces(std::vector<Face> Faces, std::vector<glm::vec3> Vertices)
+{
+	for (int faceNum = 0; faceNum < Faces.size(); faceNum++) {
+		Face f = Faces.at(faceNum);
+		std::vector<glm::vec3> faceVertices;
+		for (int v = 0; v < 3; v++) {
+			faceVertices.push_back(Vertices.at(f.GetVertexIndex(v)-1));
 		}
+		plotFaceLines(faceVertices);
 	}
 }
+
+void Renderer::plotFaceLines(std::vector<glm::vec3> Vertices)
+{
+	for (int v = 0; v < 3; v++) {
+		glm::vec3 p1 = Vertices.at(v);
+		glm::vec3 p2 = Vertices.at((v + 1)%3);
+		plotLine(p1, p2);
+	}
+}
+
+std::vector<glm::vec3> Renderer::normalizeVertices(std::vector<glm::vec3> Vertices)
+{
+	float xmax = Vertices.at(0).x; float xmin = Vertices.at(0).x;
+	float ymax = Vertices.at(0).y; float ymin = Vertices.at(0).y;
+	for (int v=0; v < Vertices.size(); v++) {
+		if (Vertices.at(v).x > xmax)
+			xmax = Vertices.at(v).x;
+		if (Vertices.at(v).x < xmin)
+			xmin = Vertices.at(v).x;
+		if (Vertices.at(v).y > ymax)
+			ymax = Vertices.at(v).y;
+		if (Vertices.at(v).y < ymin)
+			ymin = Vertices.at(v).y;
+	}
+
+	for (int v=0; v < Vertices.size(); v++) {
+		Vertices.at(v).x = (viewportWidth / 4) + (viewportWidth/2)*((Vertices.at(v).x - xmin) / (xmax - xmin));
+		Vertices.at(v).y = (viewportHeight / 4) + (viewportHeight/2)*((Vertices.at(v).y - ymin) / (ymax - ymin));
+	}
+
+	return Vertices;
+}
+
+void Renderer::plotLine(glm::vec3 point1, glm::vec3 point2)
+{
+	// drawing accourding to the Bresenham algorithm
+	
+	// if x1==x2
+	if (round(point1.x) == round(point2.x)) {
+		int y1 = fmin(point1.y, point2.y);
+		int y2 = fmax(point1.y, point2.y);
+		for (int y = y1; y <= y2; y++)
+			putPixel(round(point1.x),round(y), glm::vec3(0, 0, 0));
+		return;
+	}
+
+	// if y1==y2
+	if (round(point1.y) == round(point2.y)) {
+		int x1 = fmin(point1.x, point2.x);
+		int x2 = fmax(point1.x, point2.x);
+		for (int x = x1; x <= x2; x++)
+			putPixel(round(x), round(point1.y), glm::vec3(0, 0, 0));
+		return;
+	}
+	
+	float dy = (point2.y - point1.y); float dx = (point2.x - point1.x);
+	if (abs(dy) < abs(dx)) {
+		if (point2.x < point1.x)
+			plotLineLow(point2.x, point2.y, point1.x, point1.y);
+		else
+			plotLineLow(point1.x, point1.y, point2.x, point2.y);
+	}
+	else{
+		if (point2.y < point1.y)
+			plotLineHigh(point2.x, point2.y, point1.x, point1.y);
+		else
+			plotLineHigh(point1.x, point1.y, point2.x, point2.y);
+	}
+}
+
+void Renderer::plotLineLow(float x0, float y0, float x1, float y1) {
+	float dx = x1 - x0;
+	float dy = y1 - y0;
+	float yi = 1;
+	if (dy < 0) {
+		yi = -1;
+		dy = -dy;
+	}
+	float D = 2 * dy - dx;
+	float y = y0;
+		
+	for (int x = x0; x <= x1; x++) {
+		putPixel(round(x), round(y), glm::vec3(0, 0, 0));
+		if (D > 0){
+			y = y + yi;
+			D = D - 2 * dx;
+		}
+		D = D + 2 * dy;
+	}
+}
+
+void Renderer::plotLineHigh(float x0, float y0, float x1, float y1) {
+	float dx = x1 - x0;
+	float dy = y1 - y0;
+	float xi = 1;
+	if (dx < 0) {
+		xi = -1;
+		dx = -dx;
+	}			
+	float D = 2 * dx - dy;
+	float x = x0;
+
+	for (int y = y0; y <= y1; y++) {
+		putPixel(round(x), round(y), glm::vec3(0, 0, 0));
+		if (D > 0) {
+			x = x + xi;
+			D = D - 2 * dy;
+		}
+		D = D + 2 * dx;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //##############################
 //##OpenGL stuff. Don't touch.##

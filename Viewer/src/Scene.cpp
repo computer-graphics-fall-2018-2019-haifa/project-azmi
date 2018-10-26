@@ -3,8 +3,8 @@
 #include <string>
 
 Scene::Scene() :
-	activeCameraIndex(0),
-	activeModelIndex(0)
+	activeCameraIndex(-1),
+	activeModelIndex(-1)
 {
 
 }
@@ -12,6 +12,8 @@ Scene::Scene() :
 void Scene::AddModel(const std::shared_ptr<MeshModel>& model)
 {
 	models.push_back(model);
+	SetActiveModelIndex(activeModelIndex);
+	activeModelIndex++;
 }
 
 const int Scene::GetModelCount() const
@@ -22,6 +24,8 @@ const int Scene::GetModelCount() const
 void Scene::AddCamera(const Camera& camera)
 {
 	cameras.push_back(camera);
+	SetActiveCameraIndex(activeCameraIndex);
+	activeCameraIndex++;
 }
 
 const int Scene::GetCameraCount() const
@@ -55,4 +59,9 @@ void Scene::SetActiveModelIndex(int index)
 const int Scene::GetActiveModelIndex() const
 {
 	return activeModelIndex;
+}
+
+std::shared_ptr<MeshModel> Scene::getActiveModel()
+{
+	return models.at(GetActiveModelIndex());
 }
