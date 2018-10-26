@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A25D6D77-56BB-3B15-9EA5-55FB022DF29C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>MeshViewer</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Azmi\Documents\GitHub\test\bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MeshViewer.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MeshViewer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Azmi\Documents\GitHub\test\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MeshViewer.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MeshViewer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Azmi\Documents\GitHub\test\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MeshViewer.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MeshViewer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Azmi\Documents\GitHub\test\bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MeshViewer.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MeshViewer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copying Shaders</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/fshader.glsl C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/vshader.glsl C:/Users/Azmi/Documents/GitHub/test/bin/Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\Debug\glad.lib;lib\Debug\glfw3.lib;lib\Debug\imgui.lib;lib\Debug\nativefiledialog.lib;ThirdParty\ImGuizmo\Debug\ImGuizmo.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Azmi/Documents/GitHub/test/lib/Debug/MeshViewer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Azmi/Documents/GitHub/test/bin/Debug/MeshViewer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copying Shaders</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/fshader.glsl C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/vshader.glsl C:/Users/Azmi/Documents/GitHub/test/bin/Release
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\Release\glad.lib;lib\Release\glfw3.lib;lib\Release\imgui.lib;lib\Release\nativefiledialog.lib;ThirdParty\ImGuizmo\Release\ImGuizmo.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Azmi/Documents/GitHub/test/lib/Release/MeshViewer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Azmi/Documents/GitHub/test/bin/Release/MeshViewer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copying Shaders</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/fshader.glsl C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/vshader.glsl C:/Users/Azmi/Documents/GitHub/test/bin/MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\MinSizeRel\glad.lib;lib\MinSizeRel\glfw3.lib;lib\MinSizeRel\imgui.lib;lib\MinSizeRel\nativefiledialog.lib;ThirdParty\ImGuizmo\MinSizeRel\ImGuizmo.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>No</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Azmi/Documents/GitHub/test/lib/MinSizeRel/MeshViewer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Azmi/Documents/GitHub/test/bin/MinSizeRel/MeshViewer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glfw\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\glm;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\ImGuizmo\ImGuizmo;C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\include;C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\imgui\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>Copying Shaders</Message>
+      <Command>setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E copy C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/fshader.glsl C:/Users/Azmi/Documents/GitHub/project-azmi/Viewer/shaders/vshader.glsl C:/Users/Azmi/Documents/GitHub/test/bin/RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+    <Link>
+      <AdditionalDependencies>lib\RelWithDebInfo\glad.lib;lib\RelWithDebInfo\glfw3.lib;lib\RelWithDebInfo\imgui.lib;lib\RelWithDebInfo\nativefiledialog.lib;ThirdParty\ImGuizmo\RelWithDebInfo\ImGuizmo.lib;opengl32.lib;glu32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/Azmi/Documents/GitHub/test/lib/RelWithDebInfo/MeshViewer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/Azmi/Documents/GitHub/test/bin/RelWithDebInfo/MeshViewer.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Azmi/Documents/GitHub/project-azmi -BC:/Users/Azmi/Documents/GitHub/test --check-stamp-file C:/Users/Azmi/Documents/GitHub/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\fshader.glsl;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\vshader.glsl;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeRCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeSystem.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.c;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.cxx;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Azmi/Documents/GitHub/project-azmi -BC:/Users/Azmi/Documents/GitHub/test --check-stamp-file C:/Users/Azmi/Documents/GitHub/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\fshader.glsl;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\vshader.glsl;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeRCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeSystem.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.c;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.cxx;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Azmi/Documents/GitHub/project-azmi -BC:/Users/Azmi/Documents/GitHub/test --check-stamp-file C:/Users/Azmi/Documents/GitHub/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\fshader.glsl;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\vshader.glsl;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeRCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeSystem.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.c;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.cxx;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Azmi/Documents/GitHub/project-azmi -BC:/Users/Azmi/Documents/GitHub/test --check-stamp-file C:/Users/Azmi/Documents/GitHub/test/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/Azmi/Documents/GitHub/project-azmi/CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCCompilerABI.c;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCCompiler.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystem.cmake.in;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.13\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.13\Modules\Platform\WindowsPaths.cmake;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\fshader.glsl;C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\vshader.glsl;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeCXXCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeRCCompiler.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\3.13.0-rc2\CMakeSystem.cmake;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.c;C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\feature_tests.cxx;C:\Users\Azmi\Documents\GitHub\project-azmi\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Azmi\Documents\GitHub\test\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Camera.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Face.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\ImguiMenus.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\InitShader.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\MeshModel.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Renderer.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Scene.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Utils.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\imgui_impl_glfw.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\main.cpp" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\Camera.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\Face.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\ImguiMenus.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\InitShader.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\MeshModel.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\Renderer.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\Scene.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\Utils.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\imgui_impl_glfw.h" />
+    <ClInclude Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\include\imgui_impl_opengl3.h" />
+    <None Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\fshader.glsl" />
+    <None Include="C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\shaders\vshader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Azmi\Documents\GitHub\test\ZERO_CHECK.vcxproj">
+      <Project>{9A83632C-B3F3-332E-8071-80EFDED654DF}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Azmi\Documents\GitHub\test\ThirdParty\ImGuizmo\ImGuizmo.vcxproj">
+      <Project>{AA7AE618-BABE-38C6-99D8-43DA059C78C0}</Project>
+      <Name>ImGuizmo</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glad\glad.vcxproj">
+      <Project>{2A39F791-5CAB-3E65-9A2A-52792F411942}</Project>
+      <Name>glad</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Azmi\Documents\GitHub\test\ThirdParty\glfw\src\glfw.vcxproj">
+      <Project>{EC1908C6-C03D-33B6-810B-08AEE4FEF8EE}</Project>
+      <Name>glfw</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Azmi\Documents\GitHub\test\ThirdParty\imgui\imgui.vcxproj">
+      <Project>{7E414736-5395-3F41-AD5D-E60F37E3D765}</Project>
+      <Name>imgui</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Azmi\Documents\GitHub\test\ThirdParty\nativefiledialog\nativefiledialog.vcxproj">
+      <Project>{2EB38D89-A61F-3135-85CF-B858F4364A5B}</Project>
+      <Name>nativefiledialog</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
