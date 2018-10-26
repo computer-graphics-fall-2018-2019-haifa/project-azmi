@@ -1,0 +1,6 @@
+﻿  Renderer.cpp
+C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Renderer.cpp(151): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Renderer.cpp(152): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Renderer.cpp(178): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Azmi\Documents\GitHub\project-azmi\Viewer\src\Renderer.cpp(179): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+  MeshViewer.vcxproj -> C:\Users\Azmi\Documents\GitHub\test\bin\Release\MeshViewer.exe

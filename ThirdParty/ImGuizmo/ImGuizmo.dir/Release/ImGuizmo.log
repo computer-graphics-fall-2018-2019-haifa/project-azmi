@@ -1,0 +1,6 @@
+﻿  Building Custom Rule C:/Users/Azmi/Documents/GitHub/project-azmi/ThirdParty/ImGuizmo/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/Azmi/Documents/GitHub/test/ThirdParty/ImGuizmo/CMakeFiles/generate.stamp is up-to-date.
+  ImGuizmo.cpp
+  ImSequencer.cpp
+  Generating Code...
+  ImGuizmo.vcxproj -> C:\Users\Azmi\Documents\GitHub\test\ThirdParty\ImGuizmo\Release\ImGuizmo.lib

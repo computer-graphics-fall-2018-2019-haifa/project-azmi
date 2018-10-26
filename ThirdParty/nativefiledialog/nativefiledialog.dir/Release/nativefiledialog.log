@@ -1,0 +1,11 @@
+﻿  Building Custom Rule C:/Users/Azmi/Documents/GitHub/project-azmi/ThirdParty/nativefiledialog/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/Azmi/Documents/GitHub/test/ThirdParty/nativefiledialog/CMakeFiles/generate.stamp is up-to-date.
+  nfd_common.c
+C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\nfd_common.c(107): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(346): note: see declaration of 'strncpy'
+  nfd_win.cpp
+C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\nfd_win.cpp(113): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(255): note: see declaration of 'strncat'
+C:\Users\Azmi\Documents\GitHub\project-azmi\ThirdParty\nativefiledialog\nativefiledialog\src\nfd_win.cpp(121): warning C4996: 'strncat': This function or variable may be unsafe. Consider using strncat_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(255): note: see declaration of 'strncat'
+  nativefiledialog.vcxproj -> C:\Users\Azmi\Documents\GitHub\test\lib\Release\nativefiledialog.lib
