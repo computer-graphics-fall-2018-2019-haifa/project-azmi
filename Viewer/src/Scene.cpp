@@ -40,6 +40,10 @@ void Scene::SetActiveCameraIndex(int index)
 	{
 		activeCameraIndex = index;
 	}
+
+
+
+
 }
 
 const int Scene::GetActiveCameraIndex() const
@@ -54,6 +58,14 @@ void Scene::SetActiveModelIndex(int index)
 	{
 		activeModelIndex = index;
 	}
+
+	for (int model = 0; model < models.size(); model++) {
+		if (model != index) {
+			models.at(model)->setShowBoundingBox(false);
+			models.at(model)->setShowNormals(false);
+		}
+	}
+
 }
 
 const int Scene::GetActiveModelIndex() const
@@ -61,7 +73,18 @@ const int Scene::GetActiveModelIndex() const
 	return activeModelIndex;
 }
 
+void Scene::WindowResizeHandling(int WindowSizeX, int WindowSizeY)
+{
+	for (int model = 0; model < models.size(); model++)
+		models.at(model)->WindowResizeHandling(WindowSizeX, WindowSizeY);
+}
+
 std::shared_ptr<MeshModel> Scene::getActiveModel()
 {
 	return models.at(GetActiveModelIndex());
+}
+
+std::vector<std::shared_ptr<MeshModel>> Scene::getAllModels()
+{
+	return models;
 }

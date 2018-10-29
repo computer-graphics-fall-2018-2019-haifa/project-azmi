@@ -15,8 +15,10 @@
 
 bool showDemoWindow = false;
 bool showAnotherWindow = false;
-bool showSimplewindow2 = false;
+bool showSimplewindow2 = true;
 bool showLoadModelWindow = true;
+bool showNormals = false;
+bool showBoundingBox = false;
 
 glm::vec4 clearColor = glm::vec4(0.8f, 0.8f, 0.8f, 1.00f);
 
@@ -27,35 +29,55 @@ const glm::vec4& GetClearColor()
 
 void DrawImguiMenus(ImGuiIO& io, Scene& scene)
 {
+	/*
 	// 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
 	if (showDemoWindow)
 	{
 		ImGui::ShowDemoWindow(&showDemoWindow);
 	}
-
+	*/
 	// 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
 	if(showSimplewindow2){
 		static float f = 0.0f;
 		static int counter = 0;
 
-		ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+		ImGui::Begin("Utilities");                          // Create a window called "Hello, world!" and append into it.
 
-		ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-		ImGui::Checkbox("Demo Window", &showDemoWindow);      // Edit bools storing our window open/close state
-		ImGui::Checkbox("Another Window", &showAnotherWindow);
+		ImGui::Checkbox("show normals", &showNormals);      // Edit bools storing our window open/close state
+		ImGui::Checkbox("show bounding box", &showBoundingBox);
 
-		ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
+		//ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
 		ImGui::ColorEdit3("clear color", (float*)&clearColor); // Edit 3 floats representing a color
 
-		if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-			counter++;
-		ImGui::SameLine();
-		ImGui::Text("counter = %d", counter);
+		if (ImGui::Button("translate left"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+			// code for translation right
+		if (ImGui::Button("translate right"))
 
 		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
 		ImGui::End();
 	}
 
+	if (showNormals){
+		// draw normals
+		if(scene.GetActiveModelIndex()>=0)
+			(*scene.getActiveModel()).setShowNormals(true);
+	}
+	else {
+		if (scene.GetActiveModelIndex() >= 0)
+			(*scene.getActiveModel()).setShowNormals(false);
+	}
+	
+	if (showBoundingBox) {
+		// draw bounding box
+		if (scene.GetActiveModelIndex() >= 0)
+			(*scene.getActiveModel()).setShowBoundingBox(true);
+	}
+	else {
+		if (scene.GetActiveModelIndex() >= 0)
+			(*scene.getActiveModel()).setShowBoundingBox(false);
+	}
+
+	/*
 	// 3. Show another simple window.
 	if (showAnotherWindow)
 	{
@@ -67,7 +89,7 @@ void DrawImguiMenus(ImGuiIO& io, Scene& scene)
 		}
 		ImGui::End();
 	}
-
+	*/
 	// 4. Demonstrate creating a fullscreen menu bar and populating it.
 	if(showLoadModelWindow){
 		ImGuiWindowFlags flags = ImGuiWindowFlags_NoFocusOnAppearing;

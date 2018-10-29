@@ -36,5 +36,7 @@ public:
 	const int GetActiveModelIndex() const;
 
 	// Add more methods as needed...
+	void WindowResizeHandling(int WindowSizeX, int WindowSizeY);
 	std::shared_ptr<MeshModel> getActiveModel();
+	std::vector<std::shared_ptr<MeshModel>> getAllModels();
 };

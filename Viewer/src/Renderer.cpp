@@ -75,79 +75,96 @@ void Renderer::SetViewport(int viewportWidth, int viewportHeight, int viewportX,
 
 void Renderer::Render(Scene& scene)
 {
-
-	// draw the active model
-	if (scene.GetModelCount() > 0) {
-		std::shared_ptr<MeshModel> ActiveModel = scene.getActiveModel();
-		plotActiveModel(ActiveModel);
+	// draw all models
+	std::vector<std::shared_ptr<MeshModel>> models = scene.getAllModels();
+	for (int model = 0; model < models.size() ; model++) {
+			std::shared_ptr<MeshModel> currentModel = models.at(model);
+			plotModel(currentModel);
+			if (currentModel->getShowBoundingBox()) {
+				plotBoundingBox(currentModel->getBoundingBox());
+			}
+			
 	}
-	
-	
 }
 
 
-void Renderer::plotActiveModel(std::shared_ptr<MeshModel> ActiveModel) {
+void Renderer::plotModel(std::shared_ptr<MeshModel> ActiveModel) {
 	int shithappens = 0;
 	MeshModel model = *(ActiveModel.get());
-	plotFaces(model.getFaces(), normalizeVertices(model.getVertices()));
+	bool plotNormals = model.getShowNormals();
+	plotFaces(model.getFaces(), model.getVertices(), model.getNormals(), plotNormals);
+	
+}
+
+void Renderer::plotBoundingBox(std::vector<glm::vec3> BoundingBoxPoints)
+{
+	if (BoundingBoxPoints.size() < 8)
+		return;
+	glm::vec3 color = glm::vec3(0, 1, 0);
+	glm::vec3 p1 = BoundingBoxPoints.at(0);
+	glm::vec3 p2 = BoundingBoxPoints.at(1);
+	glm::vec3 p3 = BoundingBoxPoints.at(2);
+	glm::vec3 p4 = BoundingBoxPoints.at(3);
+	glm::vec3 p5 = BoundingBoxPoints.at(4);
+	glm::vec3 p6 = BoundingBoxPoints.at(5);
+	glm::vec3 p7 = BoundingBoxPoints.at(6);
+	glm::vec3 p8 = BoundingBoxPoints.at(7);
+
+	plotLine(p1, p2,color);
+	plotLine(p2, p3,color);
+	plotLine(p3, p4,color);
+	plotLine(p4, p1, color);
+	
+	plotLine(p5, p6, color);
+	plotLine(p6, p7, color);
+	plotLine(p7, p8, color);
+	plotLine(p8, p1, color);
+
+	plotLine(p1, p5, color);
+	plotLine(p2, p6, color);
+	plotLine(p3, p7, color);
+	plotLine(p4, p8, color);
 }
 
 
 
-void Renderer::plotFaces(std::vector<Face> Faces, std::vector<glm::vec3> Vertices)
+void Renderer::plotFaces(std::vector<Face> Faces, std::vector<glm::vec3> Vertices, std::vector<glm::vec3> Normals,bool plotNormals)
 {
 	for (int faceNum = 0; faceNum < Faces.size(); faceNum++) {
 		Face f = Faces.at(faceNum);
 		std::vector<glm::vec3> faceVertices;
+		std::vector<glm::vec3> faceNormals;
 		for (int v = 0; v < 3; v++) {
 			faceVertices.push_back(Vertices.at(f.GetVertexIndex(v)-1));
+			faceNormals.push_back(Normals.at(f.GetNormalIndex(v) - 1));
 		}
-		plotFaceLines(faceVertices);
+		plotFaceLines(faceVertices, faceNormals, plotNormals);
 	}
 }
 
-void Renderer::plotFaceLines(std::vector<glm::vec3> Vertices)
+
+void Renderer::plotFaceLines(std::vector<glm::vec3> Vertices, std::vector<glm::vec3> Normals, bool plotNormals)
 {
 	for (int v = 0; v < 3; v++) {
 		glm::vec3 p1 = Vertices.at(v);
 		glm::vec3 p2 = Vertices.at((v + 1)%3);
-		plotLine(p1, p2);
+		plotLine(p1, p2,glm::vec3(0,0,0));
+		if (plotNormals) {
+			plotLine(p1, p1+Normals.at(v), glm::vec3(1,0,0));
+		}
 	}
+
 }
 
-std::vector<glm::vec3> Renderer::normalizeVertices(std::vector<glm::vec3> Vertices)
-{
-	float xmax = Vertices.at(0).x; float xmin = Vertices.at(0).x;
-	float ymax = Vertices.at(0).y; float ymin = Vertices.at(0).y;
-	for (int v=0; v < Vertices.size(); v++) {
-		if (Vertices.at(v).x > xmax)
-			xmax = Vertices.at(v).x;
-		if (Vertices.at(v).x < xmin)
-			xmin = Vertices.at(v).x;
-		if (Vertices.at(v).y > ymax)
-			ymax = Vertices.at(v).y;
-		if (Vertices.at(v).y < ymin)
-			ymin = Vertices.at(v).y;
-	}
-
-	for (int v=0; v < Vertices.size(); v++) {
-		Vertices.at(v).x = (viewportWidth / 4) + (viewportWidth/2)*((Vertices.at(v).x - xmin) / (xmax - xmin));
-		Vertices.at(v).y = (viewportHeight / 4) + (viewportHeight/2)*((Vertices.at(v).y - ymin) / (ymax - ymin));
-	}
-
-	return Vertices;
-}
-
-void Renderer::plotLine(glm::vec3 point1, glm::vec3 point2)
+void Renderer::plotLine(glm::vec3 point1, glm::vec3 point2, glm::vec3 color)
 {
 	// drawing accourding to the Bresenham algorithm
-	
 	// if x1==x2
 	if (round(point1.x) == round(point2.x)) {
 		int y1 = fmin(point1.y, point2.y);
 		int y2 = fmax(point1.y, point2.y);
 		for (int y = y1; y <= y2; y++)
-			putPixel(round(point1.x),round(y), glm::vec3(0, 0, 0));
+			putPixel(round(point1.x),round(y), color);
 		return;
 	}
 
@@ -156,26 +173,26 @@ void Renderer::plotLine(glm::vec3 point1, glm::vec3 point2)
 		int x1 = fmin(point1.x, point2.x);
 		int x2 = fmax(point1.x, point2.x);
 		for (int x = x1; x <= x2; x++)
-			putPixel(round(x), round(point1.y), glm::vec3(0, 0, 0));
+			putPixel(round(x), round(point1.y), color);
 		return;
 	}
 	
 	float dy = (point2.y - point1.y); float dx = (point2.x - point1.x);
 	if (abs(dy) < abs(dx)) {
 		if (point2.x < point1.x)
-			plotLineLow(point2.x, point2.y, point1.x, point1.y);
+			plotLineLow(point2.x, point2.y, point1.x, point1.y, color);
 		else
-			plotLineLow(point1.x, point1.y, point2.x, point2.y);
+			plotLineLow(point1.x, point1.y, point2.x, point2.y, color);
 	}
 	else{
 		if (point2.y < point1.y)
-			plotLineHigh(point2.x, point2.y, point1.x, point1.y);
+			plotLineHigh(point2.x, point2.y, point1.x, point1.y, color);
 		else
-			plotLineHigh(point1.x, point1.y, point2.x, point2.y);
+			plotLineHigh(point1.x, point1.y, point2.x, point2.y, color);
 	}
 }
 
-void Renderer::plotLineLow(float x0, float y0, float x1, float y1) {
+void Renderer::plotLineLow(float x0, float y0, float x1, float y1,glm::vec3 color) {
 	float dx = x1 - x0;
 	float dy = y1 - y0;
 	float yi = 1;
@@ -187,7 +204,7 @@ void Renderer::plotLineLow(float x0, float y0, float x1, float y1) {
 	float y = y0;
 		
 	for (int x = x0; x <= x1; x++) {
-		putPixel(round(x), round(y), glm::vec3(0, 0, 0));
+		putPixel(round(x), round(y), color);
 		if (D > 0){
 			y = y + yi;
 			D = D - 2 * dx;
@@ -196,7 +213,7 @@ void Renderer::plotLineLow(float x0, float y0, float x1, float y1) {
 	}
 }
 
-void Renderer::plotLineHigh(float x0, float y0, float x1, float y1) {
+void Renderer::plotLineHigh(float x0, float y0, float x1, float y1, glm::vec3 color) {
 	float dx = x1 - x0;
 	float dy = y1 - y0;
 	float xi = 1;
@@ -208,7 +225,7 @@ void Renderer::plotLineHigh(float x0, float y0, float x1, float y1) {
 	float x = x0;
 
 	for (int y = y0; y <= y1; y++) {
-		putPixel(round(x), round(y), glm::vec3(0, 0, 0));
+		putPixel(round(x), round(y), color);
 		if (D > 0) {
 			x = x + xi;
 			D = D - 2 * dy;
