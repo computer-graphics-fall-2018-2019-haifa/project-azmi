@@ -13,9 +13,9 @@
 #include <nfd.h>
 #include <random>
 
-bool showDemoWindow = false;
+bool showDemoWindow = true;
 bool showAnotherWindow = false;
-bool showSimplewindow2 = true;
+bool showUtilityWindow = true;
 bool showLoadModelWindow = true;
 bool showNormals = false;
 bool showBoundingBox = false;
@@ -29,53 +29,159 @@ const glm::vec4& GetClearColor()
 
 void DrawImguiMenus(ImGuiIO& io, Scene& scene)
 {
-	/*
+	
 	// 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
 	if (showDemoWindow)
 	{
 		ImGui::ShowDemoWindow(&showDemoWindow);
 	}
-	*/
+	
 	// 2. Show a simple window that we create ourselves. We use a Begin/End pair to created a named window.
-	if(showSimplewindow2){
+	if(showUtilityWindow){
 		static float f = 0.0f;
 		static int counter = 0;
 
-		ImGui::Begin("Utilities");                          // Create a window called "Hello, world!" and append into it.
+		// title --------------------------------------------------------------------------------------------
+		ImGui::Begin("Utilities");                          
 
-		ImGui::Checkbox("show normals", &showNormals);      // Edit bools storing our window open/close state
+		// background color ---------------------------------------------------------------------------------
+		ImGui::ColorEdit3("Background color", (float*)&clearColor); 
+
+		// show normals and bounding box --------------------------------------------------------------------
+		ImGui::Checkbox("show normals", &showNormals);      
 		ImGui::Checkbox("show bounding box", &showBoundingBox);
+		
+		if (showNormals) {
+			// draw normals
+			if (scene.GetActiveModelIndex() >= 0)
+				(*scene.getActiveModel()).setShowNormals(true);
+		}
+		else {
+			if (scene.GetActiveModelIndex() >= 0)
+				(*scene.getActiveModel()).setShowNormals(false);
+		}
 
-		//ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-		ImGui::ColorEdit3("clear color", (float*)&clearColor); // Edit 3 floats representing a color
+		if (showBoundingBox) {
+			// draw bounding box
+			if (scene.GetActiveModelIndex() >= 0)
+				(*scene.getActiveModel()).setShowBoundingBox(true);
+		}
+		else {
+			if (scene.GetActiveModelIndex() >= 0)
+				(*scene.getActiveModel()).setShowBoundingBox(false);
+		}
 
-		if (ImGui::Button("translate left"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-			// code for translation right
-		if (ImGui::Button("translate right"))
 
-		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+		// list all models and cameras and choose active -----------------------------------------------
+
+		if (ImGui::TreeNode("All models"))
+		{
+			//ImGui::Text("Without border:");
+			ImGui::Columns(1, "mycolumns1", false);  // 3-ways, no border
+			ImGui::Separator();
+			for (int n = 0; n < scene.GetModelCount(); n++)
+			{
+				char label[32];
+				sprintf(label, "%s", scene.getModelsNames().at(n).c_str());
+				if (ImGui::Selectable(label)) {
+					scene.SetActiveModelIndex(n);
+				}
+				//ImGui::NextColumn();
+			}
+			ImGui::Columns(1);
+			ImGui::Separator();
+			ImGui::TreePop();
+		}
+
+		if (ImGui::TreeNode("All cameras"))
+		{
+			//ImGui::Text("Without border:");
+			ImGui::Columns(1, "mycolumns1", false);  // 3-ways, no border
+			ImGui::Separator();
+			for (int n = 0; n < scene.GetCameraCount(); n++)
+			{
+				char label[32];
+				sprintf(label, "camera %d", &n);
+				if (ImGui::Selectable(label)) {
+					scene.SetActiveCameraIndex(n);
+				}
+				//ImGui::NextColumn();
+			}
+			ImGui::Columns(1);
+			ImGui::Separator();
+			ImGui::TreePop();
+		}
+
+
+		int ActiveModelIndex = scene.GetActiveModelIndex();
+		std::string name;
+		if (ActiveModelIndex < 0)
+			name = "";
+		else
+			name = scene.getModelsNames().at(scene.GetActiveModelIndex());
+		ImGui::Text("Active model is %s", name.c_str());
+		
+		int ActiveCameraIndex = scene.GetActiveCameraIndex();
+		std::string CameraName;
+		if (ActiveCameraIndex < 0)
+			CameraName = "";
+		else
+			CameraName =  std::to_string(ActiveCameraIndex);
+		ImGui::Text("Active camera is %s", CameraName.c_str());
+		
+		
+
+
+		// operations and transformations -------------------------------------------------------------------
+
+		// translation
+		ImGui::Text("Translation");
+		static float step=0.0f;
+		ImGui::SliderFloat("", &step, -100.0f, 100.0f, "translation step size = %.3f");
+		if (ImGui::Button("translate X")) {                          // Buttons return true when clicked (most widgets return true when edited/activated)
+			scene.translateModel(scene.GetActiveModelIndex(),step, 0);
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("translate Y")) {
+			scene.translateModel(scene.GetActiveModelIndex(),step, 1);
+		}
+		
+		// rotation
+		ImGui::Text("Rotation");
+		static float angle = 0.0f;
+		ImGui::SliderAngle("slider angle", &angle);
+		if (ImGui::Button("rotate X")) {                          // Buttons return true when clicked (most widgets return true when edited/activated)
+			scene.rotateModel(scene.GetActiveModelIndex(),angle, 0);
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("rotate Y")) {                          // Buttons return true when clicked (most widgets return true when edited/activated)
+			scene.rotateModel(scene.GetActiveModelIndex(),angle, 1);
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("rotate Z")) {                          // Buttons return true when clicked (most widgets return true when edited/activated)
+			scene.rotateModel(scene.GetActiveModelIndex(),angle, 2);
+		}
+
+		// scaling
+		ImGui::Text("Scaling");
+		static float factor = 1.0f;
+		ImGui::SliderFloat("scale", &factor, 0.0f, 2.0f, "scale factor = %.3f");
+		if (ImGui::Button("scale X")) {                          // Buttons return true when clicked (most widgets return true when edited/activated)
+			scene.scaleModel(scene.GetActiveModelIndex(),factor, 0);
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("scale Y")) {
+			scene.scaleModel(scene.GetActiveModelIndex(),factor, 1);
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("scale Z")) {
+			scene.scaleModel(scene.GetActiveModelIndex(),factor, 2);
+		}
+
 		ImGui::End();
 	}
 
-	if (showNormals){
-		// draw normals
-		if(scene.GetActiveModelIndex()>=0)
-			(*scene.getActiveModel()).setShowNormals(true);
-	}
-	else {
-		if (scene.GetActiveModelIndex() >= 0)
-			(*scene.getActiveModel()).setShowNormals(false);
-	}
 	
-	if (showBoundingBox) {
-		// draw bounding box
-		if (scene.GetActiveModelIndex() >= 0)
-			(*scene.getActiveModel()).setShowBoundingBox(true);
-	}
-	else {
-		if (scene.GetActiveModelIndex() >= 0)
-			(*scene.getActiveModel()).setShowBoundingBox(false);
-	}
 
 	/*
 	// 3. Show another simple window.

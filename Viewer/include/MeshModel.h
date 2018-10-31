@@ -19,6 +19,7 @@ private:
 	glm::mat4x4 worldTransform;
 	glm::vec4 color;
 	std::string modelName;
+	glm::vec3 pinningPoint;
 	bool showNormals;
 	bool showBoundingBox;
 
@@ -28,16 +29,17 @@ public:
 
 	void SetWorldTransformation(const glm::mat4x4& worldTransform);
 	const glm::mat4x4& GetWorldTransformation() const;
-
+	void applyTransformation(glm::mat4x4& T);
 	const glm::vec4& GetColor() const;
 	void SetColor(const glm::vec4& color);
-	void WindowResizeHandling(int WindowsizeX , int WindowsizeY);
+	//void WindowResizeHandling(int WindowsizeX , int WindowsizeY);
 	const std::string& GetModelName();
 	bool getShowNormals();
 	void setShowNormals(bool set);
 	bool getShowBoundingBox();
 	void setShowBoundingBox(bool set);
-	// Add more methods/functionality as needed...
+	std::vector<glm::vec3> getEdgePoints();
+	glm::vec3 getPinningPoint();
 	std::vector<Face> getFaces();
 	std::vector<glm::vec3> getNormals();
 	std::vector<glm::vec3> getBoundingBox();

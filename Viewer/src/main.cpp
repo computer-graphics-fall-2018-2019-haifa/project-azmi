@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 	// Move OpenGL context to the newly created window
 	glfwMakeContextCurrent(window);
 
+	int prevframeBufferWidth = -1; int prevframeBufferHeight = -1;
 	// Get the current width/height of the frame buffer
 	int frameBufferWidth, frameBufferHeight;
 	glfwGetFramebufferSize(window, &frameBufferWidth, &frameBufferHeight);
@@ -50,7 +51,7 @@ int main(int argc, char **argv)
 	// Create the renderer and the scene
 	Renderer renderer = Renderer(frameBufferWidth, frameBufferHeight);
 	Scene scene = Scene();
-
+	scene.SetWindowSize(frameBufferWidth, frameBufferHeight);
 	// Setup ImGui
 	ImGuiIO& io = SetupDearImgui(window);
 
@@ -133,7 +134,7 @@ void RenderFrame(GLFWwindow* window, Scene& scene, Renderer& renderer, ImGuiIO& 
 	glfwGetFramebufferSize(window, &frameBufferWidth, &frameBufferHeight);
 
 	// Resize handling here... (a suggestion)
-	scene.WindowResizeHandling(frameBufferWidth, frameBufferHeight);
+	scene.checkWindowSizeChangeAndHandle(frameBufferWidth, frameBufferHeight);
 
 	// Clear the frame buffer
 	renderer.ClearColorBuffer(GetClearColor());
